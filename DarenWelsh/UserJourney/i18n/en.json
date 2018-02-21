@@ -1,0 +1,23 @@
+{
+	"userjourney": "UserJourney",
+	"userjourney-desc": "[[Special:UserJourney|Tracks user journey]]",
+	"userjourney-viewmode": "View",
+	"userjourney-overview": "Overview",
+	"userjourney-history": "History",
+	"userjourney-badges": "Badges",
+	"userjourney-my-activity": "My Activity",
+	"userjourney-compare-activity": "Compare Activity",
+	"userjourney-filteruser": "filter",
+	"userjourney-filterpage": "filter",
+	"userjourney-unfilter": "Unfilter",
+	"userjourney-rawdata": "Data",
+	"userjourney-plot": "Plot",
+	"userjourney-compare-by-peers": "people like me",
+	"userjourney-compare-users-within-group": "people within group",
+	"userjourney-compare-score-between-groups": "score by group",
+	"userjourney-compare-score-managers-vs-others": "managers vs employees",
+	"userjourney-compare-views-between-groups": "views by group",
+	"userjourney-compare-unique-user-views-between-groups": "unique user views by group",
+	"userjourney-compare-unique-user-page-views-between-groups": "unique user-page views by group",
+	"userjourney-compare-score-views-ratio-between-groups": "score-view ratio by group"
+}
