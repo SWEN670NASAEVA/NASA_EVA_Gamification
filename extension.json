@@ -1,0 +1,25 @@
+{
+	"name": "NASA_EVA_Gamification",
+	"version": "0.1",
+	"author": [
+		"UMUC SWEN670 Spring 2018"
+	],
+	"url": "https://github.com/SWEN670NASAEVA/NASA_EVA_Gamification",
+#	"descriptionmsg": "youtube-desc",
+	"license-name": "GPL-2.0+",
+	"type": "parserhook",
+#	"AutoloadClasses": {
+#		"YouTube": "YouTube.class.php"
+#	},
+#	"MessagesDirs": {
+#		"YouTube": [
+#			"i18n"
+#		]
+#	},
+#	"Hooks": {
+#		"ParserFirstCallInit": [
+#			"YouTube::registerTags"
+#		]
+#	},
+	"manifest_version": 1
+}
