@@ -1,25 +1,52 @@
 {
 	"name": "NASA_EVA_Gamification",
-	"version": "0.1",
+	"version": "0.1.0",
 	"author": [
-		"UMUC SWEN670 Spring 2018"
+		"UMUC SWEN670 Spring2018"
 	],
 	"url": "https://github.com/SWEN670NASAEVA/NASA_EVA_Gamification",
-#	"descriptionmsg": "youtube-desc",
-	"license-name": "GPL-2.0+",
-	"type": "parserhook",
-#	"AutoloadClasses": {
-#		"YouTube": "YouTube.class.php"
-#	},
-#	"MessagesDirs": {
-#		"YouTube": [
-#			"i18n"
-#		]
-#	},
-#	"Hooks": {
-#		"ParserFirstCallInit": [
-#			"YouTube::registerTags"
-#		]
-#	},
+	"descriptionmsg": "gamification-desc",
+	"license-name": "MIT",
+	"type": "other",
+	"AutoloadClasses": {
+		"NASA_EVA_GamificationHooks": "NASA_EVA_Gamification.hooks.php",
+		"SpecialHelloWorld": "specials/SpecialHelloWorld.php"
+	},
+	"config": {
+		"NASA_EVA_GamificationEnableFoo": true
+	},
+	"ExtensionMessagesFiles": {
+		"NASA_EVA_GamificationAlias": "NASA_EVA_Gamification.i18n.alias.php"
+	},
+	"Hooks": {
+		"NameOfHook": [
+			"NASA_EVA_GamificationHooks::onNameOfHook"
+		]
+	},
+	"MessagesDirs": {
+		"NASA_EVA_Gamification": [
+			"i18n"
+		]
+	},
+	"ResourceModules": {
+		"ext.gamification.foo": {
+			"scripts": [
+				"modules/ext.gamification.js",
+				"modules/ext.gamification.foo.js"
+			],
+			"styles": [
+				"modules/ext.gamification.foo.css"
+			],
+			"messages": [],
+			"dependencies": []
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "",
+		"remoteExtPath": "NASA_EVA_Gamification"
+	},
+	"SpecialPages": {
+		"HelloWorld": "SpecialHelloWorld"
+	},
 	"manifest_version": 1
 }

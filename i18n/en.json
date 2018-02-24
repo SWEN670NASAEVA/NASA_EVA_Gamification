@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": []
+	},
+	"gamification-desc": "This is an example extension",
+	"gamification-i18n-welcome": "Welcome to the localization file of the BoilerPlate extension.",
+	"gamification-helloworld": "Hello world!",
+	"gamification-helloworld-intro": "Welcome to the \"Hello world\" special page of the BoilerPlate extension.",
+	"helloworld": "Hello world"
+}
