@@ -19,9 +19,7 @@
 		"NASA_EVA_GamificationAlias": "NASA_EVA_Gamification.i18n.alias.php"
 	},
 	"Hooks": {
-		"NameOfHook": [
-			"NASA_EVA_GamificationHooks::onNameOfHook"
-		]
+                "ConfirmEmailComplete": "NASA_EVA_GamificationHooks::onConfirmEmailComplete"
 	},
 	"MessagesDirs": {
 		"NASA_EVA_Gamification": [
