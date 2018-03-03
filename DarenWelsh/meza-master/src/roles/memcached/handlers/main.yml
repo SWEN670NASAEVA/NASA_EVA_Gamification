@@ -1,4 +1,0 @@
----
-- name: restart memcached
-  service: name=memcached state=restarted
-  when: docker_skip_tasks is not defined or not docker_skip_tasks

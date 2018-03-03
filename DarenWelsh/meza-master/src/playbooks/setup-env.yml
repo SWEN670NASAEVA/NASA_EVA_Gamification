@@ -1,9 +1,0 @@
----
-
-- hosts: localhost
-  become: yes
-  roles:
-    - set-vars
-    - setup-env
-  vars:
-    allow_missing_secret_config: true
