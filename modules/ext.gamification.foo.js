@@ -6,7 +6,7 @@
 	}
 
 	/**
-	 * @class mw.boilerPlate.Foo
+	 * @class mw.gamification.Foo
 	 *
 	 * @constructor
 	 */

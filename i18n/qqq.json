@@ -8,7 +8,7 @@
 			"Liuxinyu970226"
 		]
 	},
-	"gamification-desc": "{{desc|name=Boilerplate|url=https://www.mediawiki.org/wiki/Extension:Boilerplate}}",
+	"gamification-desc": "{{desc|name=NASA_EVA_Gamification|url=https://github.com/SWEN670NASAEVA/NASA_EVA_Gamification}}",
 	"gamification-i18n-welcome": "Used to greet the user when reading the i18n/??.json file.",
 	"gamification-helloworld": "Page title of the HelloWorld special page.\n{{Identical|Hello World}}",
 	"gamification-helloworld-intro": "Text displayed on the HelloWorld SpecialPage.",

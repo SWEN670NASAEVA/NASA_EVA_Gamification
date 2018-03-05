@@ -1,6 +1,6 @@
 <?php
 /**
- * Hooks for BoilerPlate extension
+ * Hooks for NASA_EVA_Gamification extension
  *
  * @file
  * @ingroup Extensions

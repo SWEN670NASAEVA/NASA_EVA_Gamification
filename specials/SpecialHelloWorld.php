@@ -1,6 +1,6 @@
 <?php
 /**
- * HelloWorld SpecialPage for BoilerPlate extension
+ * HelloWorld SpecialPage for NASA_EVA_Gamification extension
  *
  * @file
  * @ingroup Extensions

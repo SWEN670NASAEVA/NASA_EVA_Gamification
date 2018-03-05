@@ -1,7 +1,7 @@
 ( function () {
 
 	/**
-	 * @class mw.boilerPlate
+	 * @class mw.gamification
 	 * @singleton
 	 */
 	mw.gamification = {
