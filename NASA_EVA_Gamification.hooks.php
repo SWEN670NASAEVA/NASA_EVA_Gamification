@@ -19,7 +19,7 @@ class NASA_EVA_GamificationHooks {
 	/**
 	  *  Add hook for creating database objects
 	  */
-	public static function onLoadExtentionSchemaUpdates( $updater ) {
+	public static function onLoadExtensionSchemaUpdates( $updater ) {
 		$updater->addExtensionTable( 'dummy', 
 			__DIR__ . '/sql/add_objects.sql' );
 		return true;
