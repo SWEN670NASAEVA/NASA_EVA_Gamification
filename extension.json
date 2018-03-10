@@ -23,7 +23,7 @@
 			"NASA_EVA_GamificationHooks::onConfirmEmailComplete"
 		],
 		"LoadExtensionSchemaUpdates": [
-			"NASA_EVA_GamificationHooks::onLoadSchemaUpdates"
+			"NASA_EVA_GamificationHooks::onLoadExtensionSchemaUpdates"
 		]
 	},
 	"MessagesDirs": {
