@@ -7,13 +7,22 @@
  */
 
 class NASA_EVA_GamificationHooks {
-    /**
-     *  Add hook for email validated capture
-     */
-    public static function onConfirmEmailComplete( $user ) {
-	wfDebugLog('NASA_EVA_Gamification', 'in emailvalidated');
-	wfDebug('NASA_EVA_Gamification - '.$user.' did a validation thing.');
-      return true;
-    }
+	/**
+	  *  Add hook for email validated capture
+	  */
+	public static function onConfirmEmailComplete( $user ) {
+		wfDebugLog('NASA_EVA_Gamification', 'in emailvalidated');
+		wfDebug('NASA_EVA_Gamification - '.$user.' did a validation thing.');
+		return true;
+	}
+
+	/**
+	  *  Add hook for creating database objects
+	  */
+	public static function onLoadExtentionSchemaUpdates( $updater ) {
+		$updater->addExtensionTable( 'dummy', 
+			__DIR__ . '/sql/add_objects.sql' );
+		return true;
+	}
 }
 
