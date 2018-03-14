@@ -11,10 +11,24 @@ class NASA_EVA_GamificationHooks {
 	  *  Add hook for email validated capture
 	  */
 	public static function onConfirmEmailComplete( $user ) {
-		wfDebugLog('NASA_EVA_Gamification', 'in emailvalidated');
-		wfDebug('NASA_EVA_Gamification - '.$user.' did a validation thing.');
+		$arrayForDatabase[] = array(
+			'user_id' => $user->getID(),
+			'badge_tag' => 'gamification-badge-emailverification',
+			'badge_rank' => 'gamification-rank-1',
+			'date_badge_earned' => wfTimestamp(TS_MW)
+		);
+		$dbw = wfGetDB(DB_MASTER);
+		$dbw->insert('gamification_badges',
+			$arrayForDatabase,
+			__METHOD__,
+			'IGNORE');
+		if( $dbw->affectedRows()==1 ) {
+// Notify the user somehow that they earned a new badge?
+			wfDebug('NASA EVA - new badge earned');
+		}
 		return true;
 	}
+
 
 	/**
 	  *  Add hook for creating database objects

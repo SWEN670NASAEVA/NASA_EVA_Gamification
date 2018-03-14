@@ -4,7 +4,7 @@
 	},
 	"gamification-desc": "Allows for gamification of MediaWiki actions, per design goals of NAVA EVA",
 	"gamification-i18n-welcome": "Welcome to the localization file of the NASA_EVA_Gamification extension.",
-	"gamification-helloworld": "Hello world!",
-	"gamification-helloworld-intro": "Welcome to the \"Hello world\" special page of the NASA_EVA_Gamification extension.",
-	"helloworld": "Hello world"
+	"gamification-userprofile": "User Profile",
+	"gamification-userprofile-intro": "Welcome to the \"User Profile\" special page of the NASA_EVA_Gamification extension.",
+	"userprofile": "User Profile"
 }
