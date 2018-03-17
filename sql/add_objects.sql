@@ -1,31 +1,10 @@
 -- SQL Objects for NASA EVA Gamification extension
 
-
--- Examples from other extensions: 
--- Notes table 
---CREATE TABLE /*_*/example_note (
-  -- Unique ID to identify each note
---  exnote_id int unsigned NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  -- Foreign key to user.user_id
---  exnote_user int unsigned NOT NULL,
-  -- Key to page.page_id.
---  exnote_page int unsigned NOT NULL,
-  -- Note value as a string.
---  exnote_value blob
--- ); 
--- For querying of all notes from all users on a certain page 
--- (e.g. "Notes by other users" on a certain page). 
---CREATE INDEX /*i*/exnote_page_user ON /*_*/example_note (exnote_page, exnote_user);
-
-
-
-
 --
 -- Table structure for table gamification_badges
 --
 
-DROP TABLE IF EXISTS gamification_badges;
-CREATE TABLE gamification_badges (
+CREATE TABLE IF NOT EXISTS gamification_badges (
   user_id int(10) UNSIGNED NOT NULL,
   badge_tag varbinary(255) NOT NULL DEFAULT '',
   badge_rank varbinary(255) NOT NULL DEFAULT '',
@@ -59,6 +38,6 @@ COMMIT;
 --
 
 INSERT INTO gamification_badges (user_id, badge_tag, badge_rank)
-SELECT user_id, 'gamification-badge-emailverification', 'gamification-rank-1'
-FROM user
-WHERE user_email_authenticated IS NOT NULL;
+  SELECT user_id, 'gamification-badge-emailverification', 'gamification-rank-1'
+  FROM user
+  WHERE user_email_authenticated IS NOT NULL;

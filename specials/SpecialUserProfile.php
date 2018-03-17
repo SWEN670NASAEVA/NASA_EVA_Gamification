@@ -22,8 +22,6 @@ class SpecialUserProfile extends SpecialPage {
 
 		$out->addWikiMsg( 'gamification-userprofile-intro' );
 
-		$out->addWikiText( 'Want to see [[Special:UserProfile/all|all]] badges earned?' );
-
 		if( $sub == 'all') {
 			$this->userProfileAll();
 		} else {
@@ -37,15 +35,24 @@ class SpecialUserProfile extends SpecialPage {
 	}
 
 	public function userProfileUser() {
-		global $wgOut, $wgUser;
-		
+		global $wgOut, $wgUser, $wgNASA_EVA_GamificationMaxNumberOfRanks;
+
+//		global $wgNASA_EVA_GamificationGamesToRankMapping;
+//		$wgOut->addWikiText($wgNASA_EVA_GamificationGamesToRankMapping["gamification-badge-emailverification"]);
+
+
+		if($wgUser->getId() == 0) { 
+			$wgOut->addWikiText('gamification-notloggedin');
+			return true;
+		}
+
 		$wgOut->setPageTitle(' User Gamification Profile for '.$wgUser->getName());
 
 		$dbr = wfGetDB( DB_SLAVE );
 		$res = $dbr->select(
 			'gamification_badges',
 			array('badge_tag', 'badge_rank', 'date_badge_earned'),
-			null,
+			array('user_id' => $wgUser->getId()),
 			__METHOD__,
 			array('ORDER BY' => 'date_badge_earned DESC'),
 			null
@@ -53,11 +60,10 @@ class SpecialUserProfile extends SpecialPage {
 		$txt = $wgUser->getName()."<br>";
 		$txt .= $wgUser->getRealName()."<br>";
 		$count = 0;
-		$text = "";
 		
 		while ($row = $dbr->fetchRow($res)) {
 			$text .= "The ".$row['badge_rank'].
-				" level ".$row['badge-tag']." badge was earned".
+				" level ".$row['badge_tag']." badge was earned".
 				($row['date_badge_earned']==null ? "." : " on ".$row['date_badge_earned'].".<br>");
 			$count++;
 		}
@@ -67,6 +73,9 @@ class SpecialUserProfile extends SpecialPage {
 		}
 		
 		$wgOut->addWikiText( $txt );
+
+		$wgOut->addWikiText( 'Want to see [[Special:UserProfile/all|all]] badges earned?' );
+
 	}
 
 	public function userProfileAll() {

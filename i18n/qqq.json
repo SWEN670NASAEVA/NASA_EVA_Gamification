@@ -6,7 +6,11 @@
 	},
 	"gamification-desc": "{{desc|name=NASA_EVA_Gamification|url=https://github.com/SWEN670NASAEVA/NASA_EVA_Gamification}}",
 	"gamification-i18n-welcome": "Used to greet the user when reading the i18n/??.json file.",
-	"gamification-userprofile": "Page title of the HelloWorld special page.\n{{Identical|Hello World}}",
-	"gamification-userprofile-intro": "Text displayed on the HelloWorld SpecialPage.",
-	"userprofile": "Text of the link to the HelloWorld special page on SpecialPages.\n{{Identical|Hello World}}"
+	"gamification-userprofile": "Page title of the UserProfile special page.\n{{Identical|Hello World}}",
+	"gamification-userprofile-intro": "Text displayed on the UserProfile SpecialPage.",
+	"userprofile": "Text of the link to the UserProfile special page on SpecialPages.\n{{Identical|Hello World}}",
+	"gamification-rank-1": "Text of the Rank 1 level of gamification badges",
+	"gamification-rank-2": "Text of the Rank 2 level of gamification badges",
+	"gamification-rank-3": "Text of the Rank 3 level of gamification badges",
+	"gamification-badge-emailverfication": "Badge name for the Email Verification Game"
 }
