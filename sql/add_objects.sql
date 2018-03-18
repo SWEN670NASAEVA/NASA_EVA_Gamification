@@ -6,8 +6,8 @@
 
 CREATE TABLE IF NOT EXISTS gamification_badges (
   user_id int(10) UNSIGNED NOT NULL PRIMARY KEY,
-  badge_tag varchar(255) NOT NULL DEFAULT '' PRIMARY KEY,
-  badge_rank varchar(255) NOT NULL DEFAULT '' PRIMARY KEY,
+  badge_tag varchar(255) NOT NULL DEFAULT '',
+  badge_rank varchar(255) NOT NULL DEFAULT '',
   date_badge_earned binary(14) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=binary;
 
