@@ -39,7 +39,8 @@ COMMIT;
 --
 -- Populate the gamification_badges table with the email verification badge, if they already verified before the extention was loaded.
 --
-INSERT INTO gamification_badges (user_id, badge_tag, badge_rank)
+INSERT IGNORE INTO gamification_badges (user_id, badge_tag, badge_rank)
   SELECT user_id, 'gamification-badge-emailverification', 'gamification-rank-1'
   FROM user
-  WHERE user_email_authenticated IS NOT NULL;
+  WHERE user_email_authenticated IS NOT NULL
+  ;
