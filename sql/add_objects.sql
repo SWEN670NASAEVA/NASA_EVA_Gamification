@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS /*_*/ gamification_badges (
 --  ADD KEY game_badge_search_idx (user_id,badge_tag,badge_rank) USING BTREE,
 --  ADD KEY gam_badge_user_idx (user_id) USING BTREE;
 
-CREATE UNIQUE INDEX /*i*/gamification_badges_unique_idx ON /*_*/ gamification_badges(user_id, badge_tag, badge_rank);
+-- CREATE UNIQUE INDEX /*i*/gamification_badges_unique_idx ON /*_*/ gamification_badges(user_id, badge_tag, badge_rank);
 
 --
 -- Constraints for table gamification_badges
