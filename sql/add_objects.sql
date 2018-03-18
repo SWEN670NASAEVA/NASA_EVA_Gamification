@@ -31,10 +31,10 @@ CREATE TABLE IF NOT EXISTS /*_*/ gamification_badges (
 -- Constraints for table gamification_badges
 --
 
-ALTER TABLE /*_*/ gamification_badges 
-  ADD CONSTRAINT gamification_badges_ibfk_1 FOREIGN KEY (user_id) REFERENCES `user` (user_id) 
-  ON DELETE CASCADE ON UPDATE CASCADE;
-COMMIT;
+--ALTER TABLE /*_*/ gamification_badges 
+--  ADD CONSTRAINT gamification_badges_ibfk_1 FOREIGN KEY (user_id) REFERENCES `user` (user_id) 
+--  ON DELETE CASCADE ON UPDATE CASCADE;
+--COMMIT;
 
 --
 -- Populate the gamification_badges table with the email verification badge, if they already verified before the extention was loaded.
