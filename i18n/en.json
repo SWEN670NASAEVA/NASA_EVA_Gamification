@@ -6,9 +6,10 @@
 	"gamification-i18n-welcome": "Welcome to the localization file of the NASA_EVA_Gamification extension.",
 	"gamification-userprofile": "User Gamification Profile",
 	"gamification-userprofile-intro": "Welcome to the \"User Gamification Profile\" special page of the NASA_EVA_Gamification extension.",
-	"userprofile": "User Gamification Profile",
-	"gamification-rank-1": "Bronze",
-	"gamification-rank-2": "Silver",
-	"gamification-rank-3": "Gold",
-	"gamification-badge-emailverification": "Moon Landing"
+	"usergamificationprofile": "User Gamification Profile",
+	"gamification-notloggedin": "To view this data, you must first log in",
+	"gamification-rank-1": "Astronaut",
+	"gamification-rank-2": "Spacewalker",
+	"gamification-rank-3": "Moonwalker",
+	"gamification-badge-emailverification": "Spacesuit Verified"
 }
