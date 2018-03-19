@@ -10,6 +10,7 @@
 	"gamification-userprofile-intro": "Text displayed on the UserGamificationProfile SpecialPage.",
 	"usergamiciationprofile": "Text of the link to the UserGamificationProfile special page on SpecialPages.\n{{Identical|User Gamification Profile}}",
 	"gamification-notloggedin": "Message to display when a user is not logged in and wants to view User Gamification Data",
+	"gamification-congrats": "Beginning of the congratulation message for earning a badge",
 	"gamification-rank-1": "Text of the Rank 1 level of gamification badges",
 	"gamification-rank-2": "Text of the Rank 2 level of gamification badges",
 	"gamification-rank-3": "Text of the Rank 3 level of gamification badges",
