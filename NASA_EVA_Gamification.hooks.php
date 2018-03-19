@@ -13,7 +13,7 @@ class NASA_EVA_GamificationHooks {
 	  *  @param User $user MediaWiki User object
 	  */
 	public static function onConfirmEmailComplete( $user ) {
-		global $wgOut;
+//		global $wgOut;
 
 		// Declare global variable from our extension.json file
 		global $wgNASA_EVA_GamificationGamesToRankMapping;
@@ -37,11 +37,11 @@ class NASA_EVA_GamificationHooks {
 		// If the previous INSERT affected 1 row, it's a new badge
 		if( $dbw->affectedRows()==1 ) {
 // Notify the user somehow that they earned a new badge?
-			$wgOut->addWikiText(
-				wfMessage('gamification-congrats')->escape().
-				wfMessage('gamification-badge-emailverfication')
-			);
-//			wfDebug('NASA EVA - new badge earned');
+//			$wgOut->addWikiText(
+//				wfMessage('gamification-congrats')->escape().
+//				wfMessage('gamification-badge-emailverfication')
+//			);
+			wfDebug('NASA EVA - new badge earned');
 		}
 		return true;
 	}
