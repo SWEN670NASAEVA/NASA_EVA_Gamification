@@ -13,7 +13,7 @@ class NASA_EVA_GamificationHooks {
 	  *  @param User $user MediaWiki User object
 	  */
 	public static function onConfirmEmailComplete( $user ) {
-		global = $wgOut;
+		global $wgOut;
 
 		// Declare global variable from our extension.json file
 		global $wgNASA_EVA_GamificationGamesToRankMapping;
