@@ -15,13 +15,14 @@ class SpecialUserGamificationProfile extends SpecialPage {
 	 * Show the page to the user
 	 *
 	 * @param string $sub The subpage string argument (if any).
-	 *  [[Special:UserProfile/subpage]].
+	 *  [[Special:UserGamificationProfile/subpage]].
 	 */
 	public function execute( $sub ) {
 		$out = $this->getOutput();
 
 		$out->addWikiMsg( 'gamification-userprofile-intro' );
 
+		// Change the display, based on the subpage toggle
 		if( $sub == 'all') {
 			$this->userGamificationProfileAll();
 		} else {
@@ -30,17 +31,19 @@ class SpecialUserGamificationProfile extends SpecialPage {
 
 	}
 
+	// Add this SpecialPage under the MediaWiki 'Others' category
 	protected function getGroupName() {
 		return 'other';
 	}
 
+	/**
+	 * Backend query and page build of a single user's Gamification badges
+	 */
+
 	public function userGamificationProfileUser() {
 		global $wgOut, $wgUser, $wgNASA_EVA_GamificationMaxNumberOfRanks;
 
-//		global $wgNASA_EVA_GamificationGamesToRankMapping;
-//		$wgOut->addWikiText($wgNASA_EVA_GamificationGamesToRankMapping["gamification-badge-emailverification"]);
-
-
+		// Don't display anonymous or IP versions of the page
 		if($wgUser->getId() == 0) { 
 			$wgOut->addWikiMsg( 'gamification-notloggedin' );
 			return true;
@@ -48,6 +51,7 @@ class SpecialUserGamificationProfile extends SpecialPage {
 
 		$wgOut->setPageTitle(' User Gamification Profile for '.$wgUser->getName());
 
+		// Query against a read-only database, if configured
 		$dbr = wfGetDB( DB_SLAVE );
 		$res = $dbr->select(
 			'gamification_badges',
@@ -57,10 +61,13 @@ class SpecialUserGamificationProfile extends SpecialPage {
 			array('ORDER BY' => 'date_badge_earned DESC'),
 			null
 		);
+
+		// Display user's Name and RealName
 		$txt = $wgUser->getName()."<br>";
 		$txt .= $wgUser->getRealName()."<br>";
 		$count = 0;
 		
+		// Get data from query while there are rows to be fetched
 		while ($row = $dbr->fetchRow($res)) {
 			$text .= "The ".wfMessage($row['badge_rank'])->escaped().
 				" level ".wfMessage($row['badge_tag'])->escaped()." badge was earned".
@@ -75,8 +82,11 @@ class SpecialUserGamificationProfile extends SpecialPage {
 		$wgOut->addWikiText( $txt );
 
 		$wgOut->addWikiText( 'Want to see [[Special:UserGamificationProfile/all|all]] badges earned?' );
-
 	}
+
+	/**
+	  * Function will display all earned badges known to the system
+	  */
 
 	public function userGamificationProfileAll() {
 		global $wgOut;

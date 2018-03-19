@@ -13,7 +13,6 @@
 		"SpecialUserGamificationProfile": "specials/SpecialUserGamificationProfile.php"
 	},
 	"config": {
-		"NASA_EVA_GamificationEnableFoo": true,
 		"NASA_EVA_GamificationGamesToRankMapping": {
 			"gamification-badge-emailverification": "gamification-rank-1"
 		},
