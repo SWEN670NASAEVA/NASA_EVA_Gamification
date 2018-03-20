@@ -10,5 +10,5 @@ $specialPageAliases = [];
 
 /** English (English) */
 $specialPageAliases['en'] = [
-	'HelloWorld' => [ 'HelloWorld' ],
+	'UserGamificationProfile' => [ 'UserGamificationProfile' ],
 ];

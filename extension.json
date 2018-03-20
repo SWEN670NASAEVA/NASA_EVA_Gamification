@@ -10,10 +10,14 @@
 	"type": "other",
 	"AutoloadClasses": {
 		"NASA_EVA_GamificationHooks": "NASA_EVA_Gamification.hooks.php",
-		"SpecialHelloWorld": "specials/SpecialHelloWorld.php"
+		"SpecialUserGamificationProfile": "specials/SpecialUserGamificationProfile.php"
 	},
 	"config": {
-		"NASA_EVA_GamificationEnableFoo": true
+		"NASA_EVA_GamificationGamesToRankMapping": {
+			"gamification-badge-emailverification": "gamification-rank-1"
+		},
+		"NASA_EVA_GamificationMaxNumberOfRanks": 3,
+		"NASA_EVA_GamificationImagePath": "images/"
 	},
 	"ExtensionMessagesFiles": {
 		"NASA_EVA_GamificationAlias": "NASA_EVA_Gamification.i18n.alias.php"
@@ -49,7 +53,7 @@
 		"remoteExtPath": "NASA_EVA_Gamification"
 	},
 	"SpecialPages": {
-		"HelloWorld": "SpecialHelloWorld"
+		"UserGamificationProfile": "SpecialUserGamificationProfile"
 	},
 	"manifest_version": 1
 }
