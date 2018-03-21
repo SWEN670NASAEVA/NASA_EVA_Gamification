@@ -20,15 +20,7 @@ class SpecialUserGamificationProfile extends SpecialPage {
 	public function execute( $sub ) {
 		$out = $this->getOutput();
 
-		//$out->addWikiMsg( 'gamification-userprofile-intro' );
-
-		// Change the display, based on the subpage toggle
-		if( $sub == 'all') {
-			$this->userGamificationProfileAll();
-		} else {
-			$this->userGamificationProfileUser();
-		}
-
+		$this->userGamificationProfileUser();
 	}
 
 	// Add this SpecialPage under the MediaWiki 'Others' category
@@ -37,19 +29,19 @@ class SpecialUserGamificationProfile extends SpecialPage {
 	}
 
 	/**
-	 * Backend query and page build of a single user's Gamification badges
+	 * Backend query and page build of a single user's gamification badges
 	 */
 
 	public function userGamificationProfileUser() {
 		global $wgOut, $wgUser, $wgNASA_EVA_GamificationMaxNumberOfRanks;
 
+		$wgOut->setPageTitle('User Gamification Profile');
+		
 		// Don't display anonymous or IP versions of the page
 		if($wgUser->getId() == 0) { 
 			$wgOut->addWikiMsg( 'gamification-notloggedin' );
 			return true;
 		}
-
-		$wgOut->setPageTitle(' User Gamification Profile');
 
 		// Query against a read-only database, if configured
 		$dbr = wfGetDB( DB_SLAVE );
@@ -61,7 +53,7 @@ class SpecialUserGamificationProfile extends SpecialPage {
 			array('ORDER BY' => 'date_badge_earned DESC'),
 			null
 		);
-
+		
 		// Display user's Name and RealName
 		$html = "<b>" . "Username: " . "</b>" . $wgUser->getName() . "<br />";
 		$html .= "<b>" . "Name: " . "</b>" . ($wgUser->getRealName() == "" ? "[Not Populated]" : $wgUser->getRealName()) . "<br />";
@@ -98,6 +90,7 @@ class SpecialUserGamificationProfile extends SpecialPage {
 			$html .= '</td>';
 		}
 		$html .= "</tr></table>";
+		
 		$wgOut->addWikiText( $html );
 	}
 }
