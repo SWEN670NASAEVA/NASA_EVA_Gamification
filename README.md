@@ -1,2 +1,2 @@
 # NASA_EVA_Gamification
-Gamify NASA EVA MediaWiki page.
+NASA EVA Gamification MediaWiki Extension

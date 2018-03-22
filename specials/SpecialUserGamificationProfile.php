@@ -18,8 +18,7 @@ class SpecialUserGamificationProfile extends SpecialPage {
 	 *  [[Special:UserGamificationProfile/subpage]].
 	 */
 	public function execute( $sub ) {
-		$out = $this->getOutput();
-
+		$this->getOutput()->addModules( 'ext.gamification.foo' );
 		$this->userGamificationProfileUser();
 	}
 
@@ -29,12 +28,12 @@ class SpecialUserGamificationProfile extends SpecialPage {
 	}
 
 	/**
-	 * Backend query and page build of a single user's gamification badges
+	 * Back-end query and page build of a single user's gamification badges
 	 */
 
 	public function userGamificationProfileUser() {
 		global $wgOut, $wgUser, $wgNASA_EVA_GamificationMaxNumberOfRanks;
-
+		
 		$wgOut->setPageTitle('User Gamification Profile');
 		
 		// Don't display anonymous or IP versions of the page
@@ -71,15 +70,15 @@ class SpecialUserGamificationProfile extends SpecialPage {
 			${'rank' . str_replace("gamification-rank-", "", $row['badge_rank']) . 'Array'}[] = 
 				wfMessage($row['badge_tag'])->escaped() . " - " . ($row['date_badge_earned'] == null ? "." : date_format(date_create($row['date_badge_earned']), "m/d/Y") . "<br />");
 		}
-				
+		
 		// Get and display badge data
 		$html .= '<table class="wikitable"><tr>';
 		for ($i = $wgNASA_EVA_GamificationMaxNumberOfRanks; $i > 0; $i--) {
-			$html .= '<th>' . '[' .wfMessage('gamification-rank-' . $i) . ' image]' . '</th>';
+			$html .= '<th><div class="ext-gamification-foo-rank-image ext-gamification-foo-rank-' . $i . '-image"></div>' . '</th>';
 		}
 		$html .= '</tr><tr>';
 		for ($i = $wgNASA_EVA_GamificationMaxNumberOfRanks; $i > 0; $i--) {
-			$html .= '<td>' . wfMessage('gamification-rank-' . $i) . " - " . ${'rank' . $i . 'Count'} . '</td>';
+			$html .= '<td>' . wfMessage('gamification-rank-' . $i)->escaped() . " - " . ${'rank' . $i . 'Count'} . '</td>';
 		}
 		$html .= '</tr><tr>';
 		for ($i = $wgNASA_EVA_GamificationMaxNumberOfRanks; $i > 0; $i--) {
