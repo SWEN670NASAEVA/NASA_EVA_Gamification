@@ -16,7 +16,7 @@
 		"NASA_EVA_GamificationGamesToRankMapping": {
 			"gamification-badge-emailverification": "gamification-rank-1"
 		},
-		"NASA_EVA_GamificationMaxNumberOfRanks": 3,
+		"NASA_EVA_GamificationMaxNumberOfRanks": 3
 	},
 	"ExtensionMessagesFiles": {
 		"NASA_EVA_GamificationAlias": "NASA_EVA_Gamification.i18n.alias.php"
