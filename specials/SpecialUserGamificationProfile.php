@@ -69,6 +69,7 @@ class SpecialUserGamificationProfile extends SpecialPage {
 			${'rank' . str_replace("gamification-rank-", "", $row['badge_rank']) . 'Count'}++;
 			${'rank' . str_replace("gamification-rank-", "", $row['badge_rank']) . 'Array'}[] = 
 				wfMessage($row['badge_tag'])->escaped() . " - " . ($row['date_badge_earned'] == null ? "." : date_format(date_create($row['date_badge_earned']), "m/d/Y") . "<br />");
+			$count++;
 		}
 		
 		// Get and display badge data
@@ -78,17 +79,22 @@ class SpecialUserGamificationProfile extends SpecialPage {
 		}
 		$html .= '</tr><tr>';
 		for ($i = $wgNASA_EVA_GamificationMaxNumberOfRanks; $i > 0; $i--) {
-			$html .= '<td>' . wfMessage('gamification-rank-' . $i)->escaped() . " - " . ${'rank' . $i . 'Count'} . '</td>';
+			$html .= '<td>' . wfMessage('gamification-rank-' . $i)->escaped() . " - " . ${'rank' . $i . 'Count'} . (${'rank' . $i . 'Count'} == 1 ? ' Badge' : ' Badges') . '</td>';
 		}
-		$html .= '</tr><tr>';
-		for ($i = $wgNASA_EVA_GamificationMaxNumberOfRanks; $i > 0; $i--) {
-			$html .= '<td>';
-			foreach (${'rank' . $i . 'Array'} as $rankarray) {
-				$html .= $rankarray;
+		$html .= '</tr>';
+		if ($count > 0)
+		{
+			$html .= '<tr>';
+			for ($i = $wgNASA_EVA_GamificationMaxNumberOfRanks; $i > 0; $i--) {
+				$html .= '<td>';
+				foreach (${'rank' . $i . 'Array'} as $rankarray) {
+					$html .= $rankarray;
+				}
+				$html .= '</td>';
 			}
-			$html .= '</td>';
+			$html .= "</tr>";
 		}
-		$html .= "</tr></table>";
+		$html .= "</table>";
 		
 		$wgOut->addWikiText( $html );
 	}
