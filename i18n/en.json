@@ -12,5 +12,10 @@
 	"gamification-rank-1": "Astronaut",
 	"gamification-rank-2": "Spacewalker",
 	"gamification-rank-3": "Moonwalker",
-	"gamification-badge-emailverification": "Spacesuit Verified"
+	"gamification-badge-emailverification": "Spacesuit Verified",
+	"gamification-badge-display-singular": "Badge",
+	"gamification-badge-display-plural": "Badges",
+	"gamification-username": "Username",
+	"gamification-name": "Name",
+	"gamification-name-notpopulated": "[Not Populated]"
 }

@@ -34,7 +34,7 @@ class SpecialUserGamificationProfile extends SpecialPage {
 	public function userGamificationProfileUser() {
 		global $wgOut, $wgUser, $wgNASA_EVA_GamificationMaxNumberOfRanks;
 		
-		$wgOut->setPageTitle('User Gamification Profile');
+		$wgOut->setPageTitle(wfMessage( 'gamification-userprofile' )->text());
 		
 		// Don't display anonymous or IP versions of the page
 		if($wgUser->getId() == 0) { 
@@ -46,19 +46,20 @@ class SpecialUserGamificationProfile extends SpecialPage {
 		$dbr = wfGetDB( DB_SLAVE );
 		$res = $dbr->select(
 			'gamification_badges',
-			array('badge_tag', 'badge_rank', 'date_badge_earned'),
-			array('user_id' => $wgUser->getId()),
+			array( 'badge_tag', 'badge_rank', 'date_badge_earned' ),
+			array( 'user_id' => $wgUser->getId() ),
 			__METHOD__,
-			array('ORDER BY' => 'date_badge_earned DESC'),
+			array( 'ORDER BY' => 'date_badge_earned DESC' ),
 			null
 		);
 		
 		// Display user's Name and RealName
-		$html = "<b>" . "Username: " . "</b>" . $wgUser->getName() . "<br />";
-		$html .= "<b>" . "Name: " . "</b>" . ($wgUser->getRealName() == "" ? "[Not Populated]" : $wgUser->getRealName()) . "<br />";
-		$count = 0;
+		$html = '<b>' . wfMessage( 'gamification-username' )->text() . ': ' . '</b>' . $wgUser->getName() . '<br />';
+		$html .= '<b>' . wfMessage( 'gamification-name' )->text() . ': ' . '</b>' . ( $wgUser->getRealName() == '' ? wfMessage( 'gamification-name-notpopulated' )->text() : $wgUser->getRealName() ) . '<br />';		
 		
 		// Get data from query while there are rows to be fetched
+		$count = 0;
+		
 		for ($i = $wgNASA_EVA_GamificationMaxNumberOfRanks; $i > 0; $i--) {
 			${'rank' . $i . 'Count'} = 0;
 			${'rank' . $i . 'Array'} = array();
@@ -66,9 +67,9 @@ class SpecialUserGamificationProfile extends SpecialPage {
 		
 		$badgeRankArray = array();
 		while ($row = $dbr->fetchRow($res)) {
-			${'rank' . str_replace("gamification-rank-", "", $row['badge_rank']) . 'Count'}++;
-			${'rank' . str_replace("gamification-rank-", "", $row['badge_rank']) . 'Array'}[] = 
-				wfMessage($row['badge_tag'])->escaped() . " - " . ($row['date_badge_earned'] == null ? "." : date_format(date_create($row['date_badge_earned']), "m/d/Y") . "<br />");
+			${'rank' . str_replace( 'gamification-rank-', '', $row['badge_rank'] ) . 'Count'}++;
+			${'rank' . str_replace( 'gamification-rank-', '', $row['badge_rank'] ) . 'Array'}[] = 
+				wfMessage( $row['badge_tag'] )->escaped() . ' - ' . ( $row['date_badge_earned'] == null ? '.' : date_format( date_create($row['date_badge_earned']), 'm/d/Y' ) . '<br />' );
 			$count++;
 		}
 		
@@ -79,7 +80,7 @@ class SpecialUserGamificationProfile extends SpecialPage {
 		}
 		$html .= '</tr><tr>';
 		for ($i = $wgNASA_EVA_GamificationMaxNumberOfRanks; $i > 0; $i--) {
-			$html .= '<td>' . wfMessage('gamification-rank-' . $i)->escaped() . " - " . ${'rank' . $i . 'Count'} . (${'rank' . $i . 'Count'} == 1 ? ' Badge' : ' Badges') . '</td>';
+			$html .= '<td>' . wfMessage( 'gamification-rank-' . $i )->escaped() . ' - ' . ${'rank' . $i . 'Count'} . ' ' . ( ${'rank' . $i . 'Count'} == 1 ? wfMessage( 'gamification-badge-display-singular' )->text() : wfMessage( 'gamification-badge-display-plural' )->text() ) . '</td>';
 		}
 		$html .= '</tr>';
 		if ($count > 0)
@@ -92,9 +93,9 @@ class SpecialUserGamificationProfile extends SpecialPage {
 				}
 				$html .= '</td>';
 			}
-			$html .= "</tr>";
+			$html .= '</tr>';
 		}
-		$html .= "</table>";
+		$html .= '</table>';
 		
 		$wgOut->addWikiText( $html );
 	}

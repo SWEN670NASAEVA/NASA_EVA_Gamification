@@ -14,5 +14,10 @@
 	"gamification-rank-1": "Text of the Rank 1 level of gamification badges",
 	"gamification-rank-2": "Text of the Rank 2 level of gamification badges",
 	"gamification-rank-3": "Text of the Rank 3 level of gamification badges",
-	"gamification-badge-emailverfication": "Badge name for the Email Verification Game"
+	"gamification-badge-emailverfication": "Badge name for the Email Verification Game",
+	"gamification-badge-display-singular": "Text of the singular badge name",
+	"gamification-badge-display-plural": "Text of the plural badge name",
+	"gamification-username": "Text of the username display",
+	"gamification-name": "Text of the name display",
+	"gamification-name-notpopulated": "Text of the name display if not populated"
 }
