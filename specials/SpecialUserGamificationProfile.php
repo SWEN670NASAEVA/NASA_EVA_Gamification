@@ -30,7 +30,6 @@ class SpecialUserGamificationProfile extends SpecialPage {
 	/**
 	 * Back-end query and page build of a single user's gamification badges
 	 */
-
 	public function userGamificationProfileUser() {
 		global $wgOut, $wgUser, $wgNASA_EVA_GamificationMaxNumberOfRanks;
 		
