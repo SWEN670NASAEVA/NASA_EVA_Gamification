@@ -64,14 +64,13 @@ class SpecialUserGamificationProfile extends SpecialPage {
 			${'rank' . $i . 'Array'} = array();
 		}
 		
-		$badgeRankArray = array();
 		while ($row = $dbr->fetchRow($res)) {
 			${'rank' . str_replace( 'gamification-rank-', '', $row['badge_rank'] ) . 'Count'}++;
 			${'rank' . str_replace( 'gamification-rank-', '', $row['badge_rank'] ) . 'Array'}[] = 
-				wfMessage( $row['badge_tag'] )->escaped() . ' - ' . ( $row['date_badge_earned'] == null ? '.' : date_format( date_create($row['date_badge_earned']), 'm/d/Y' ) . '<br />' );
+				wfMessage( $row['badge_tag'] )->escaped() . ( is_null( $row['date_badge_earned'] ) ? '' : ' - ' .date_format( date_create($row['date_badge_earned']), 'm/d/Y' ) . '<br />' );
 			$count++;
 		}
-		
+
 		// Get and display badge data
 		$html .= '<table class="wikitable"><tr>';
 		for ($i = $wgNASA_EVA_GamificationMaxNumberOfRanks; $i > 0; $i--) {
