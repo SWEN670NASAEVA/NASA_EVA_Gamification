@@ -8,13 +8,13 @@
 }
 
 .ext-gamification-foo-rank-1-image {
-	background-image: url("/extensions/NASA_EVA_Gamification/images/astronaut.jpg");	
+	background-image: url("../images/astronaut.jpg");	
 }
 
 .ext-gamification-foo-rank-2-image {
-	background-image: url("/extensions/NASA_EVA_Gamification/images/spacewalker.jpg");	
+	background-image: url("../images/spacewalker.jpg");	
 }
 
 .ext-gamification-foo-rank-3-image {
-	background-image: url("/extensions/NASA_EVA_Gamification/images/moonwalker.jpg");	
+	background-image: url("../images/moonwalker.jpg");	
 }
