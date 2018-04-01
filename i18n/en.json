@@ -3,6 +3,7 @@
 		"authors": "UMUC SWEN670 Spring2018"
 	},
 	"gamification-desc": "Allows for gamification of MediaWiki actions, per design goals of NAVA EVA",
+	"usergamificationprofile": "User Gamification Profile",
 	"gamification-userprofile": "User Gamification Profile",
 	"gamification-notloggedin": "To view your user gamification profile, you must first log in.",
 	"gamification-rank-1": "Astronaut",

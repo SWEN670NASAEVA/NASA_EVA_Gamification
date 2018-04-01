@@ -5,6 +5,7 @@
 		]
 	},
 	"gamification-desc": "{{desc|name=NASA_EVA_Gamification|url=https://github.com/SWEN670NASAEVA/NASA_EVA_Gamification}}",
+	"usergamificationprofile": "Text of the link to the UserGamificationProfile special page on SpecialPages.\n{{Identical|User Gamification Profile}}",
 	"gamification-userprofile": "Page title of the UserGamificationProfile special page.\n{{Identical|User Gamification Profile}}",
 	"gamification-notloggedin": "Message to display when a user is not logged in and wants to view User Gamification Data",
 	"gamification-rank-1": "Text of the Rank 1 level of gamification badges",
